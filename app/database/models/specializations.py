@@ -1,12 +1,12 @@
 from sqlalchemy import Column, Integer, String
 
-from . import Base
+from database import Base
 
 class Specialization(Base):
     '''
-    Database model Spezialization
+    Database model Specialization
     '''
-    __tablename__ = "Specialization"
+    __tablename__ = "specialization"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String)
