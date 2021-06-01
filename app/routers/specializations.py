@@ -26,4 +26,4 @@ async def create_specialization(specialization: SpecializationBase, session: Ses
     current_specialization = query.get_specialization_by_name(session, name=specialization.name)
     if current_specialization:
         raise HTTPException(status_code=400, detail="Specialization already exists")
-    return query.create_specialization(session, specialization)
+    return query.create_specialization(session, specialization )
