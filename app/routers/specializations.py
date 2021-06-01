@@ -11,9 +11,11 @@ from dependencies.db import get_db
 router = APIRouter()
 
 
-@router.get('/all_spezialisation', response_model=List[SpecializationBase])
-async def get_all_spezialisation(session: Session = Depends(get_db)):
-
+@router.get('/all_specialisation', response_model=List[SpecializationBase])
+async def get_all_specialisation(session: Session = Depends(get_db)):
     return query.get_all_specializations(session)
 
 
+@router.get('/all_specialisation/{id}', response_model=SpecializationBase)
+async def get_one_specialisation(id: int,session: Session = Depends(get_db)):
+    return query.get_one_specializations(session, id)
