@@ -14,8 +14,14 @@ def get_specialization_by_name(session: Session, name: str):
 
 def create_specialization(session: Session, specialization: SpecializationBase ):
     new_specialization = specializations.Specialization(name=specialization.name,  description=specialization.description)
-    
+
     session.add(new_specialization)
     session.commit()
     session.refresh(new_specialization)
     return new_specialization
+
+def delete_specialization(session: Session, name: str):
+    current_specialization = session.query(specializations.Specialization).filter(specializations.Specialization.name == name).first() 
+    session.delete(current_specialization)
+    session.commit()
+    return current_specialization
