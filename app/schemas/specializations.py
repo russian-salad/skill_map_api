@@ -7,3 +7,10 @@ class SpecializationBase(BaseModel):
 
     class Config:
         orm_mode = True
+
+class SpecializationUpdate(BaseModel):
+    name: Optional[str] = None
+    description: Optional[str] = None
+
+    class Config:
+        orm_mode = True
