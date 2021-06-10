@@ -2,6 +2,7 @@ from typing import List, Optional
 from pydantic import BaseModel
 
 class SpecializationBase(BaseModel):
+    id: int
     name: str
     description: Optional[str] = None
 
