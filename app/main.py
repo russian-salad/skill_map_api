@@ -5,10 +5,8 @@ from database import Base
 from database.engine import engine
 
 
-Base.metadata.create_all(bind=engine)
-
 app = FastAPI()
 
-
+Base.metadata.create_all(bind=engine)
 
 app.include_router(specializations.router)
